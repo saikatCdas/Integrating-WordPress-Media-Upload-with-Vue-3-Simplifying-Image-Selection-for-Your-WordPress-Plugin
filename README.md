@@ -14,7 +14,7 @@ if (function_exists('wp_enqueue_media')) {
 ### Setup Vue Component 
 Let's dive into creating a Vue.js component named MediaSelector.vue that will handle the media selection functionality
 
-```
+```html
 <template>
    <button @click="openMediaFrame">{{ title }}</button>
 </template>
