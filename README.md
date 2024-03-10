@@ -9,7 +9,6 @@ In the PHP file of your plugin where you enqueue scripts, ensure to include the 
 if (function_exists('wp_enqueue_media')) {
    wp_enqueue_media();
 }
-
 ```
 
 Setup Vue Component 
