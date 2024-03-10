@@ -89,7 +89,7 @@ onMounted(() => {
 ### Listen for Media Selection
 We'll listen to the media selection event and emit the selected attachments to the parent component.
 
-```html
+```bash
 const listenForMediaChange = () => {
    mediaFrame.on('select', function () {
        const attachments = mediaFrame.state()
