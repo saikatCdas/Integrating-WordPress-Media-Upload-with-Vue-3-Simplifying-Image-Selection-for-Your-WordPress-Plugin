@@ -5,7 +5,7 @@ Incorporating media upload functionality can significantly enhance user interact
 ### Enqueue the Media
 In the PHP file of your plugin where you enqueue scripts, ensure to include the following lines to enable WordPress media functionality:
 
-```
+```html
 if (function_exists('wp_enqueue_media')) {
    wp_enqueue_media();
 }
