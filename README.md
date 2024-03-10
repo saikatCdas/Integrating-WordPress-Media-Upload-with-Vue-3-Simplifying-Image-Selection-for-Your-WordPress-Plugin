@@ -2,7 +2,7 @@
 Incorporating media upload functionality can significantly enhance user interactions when building WordPress plugins. In this guide, we'll explore how to seamlessly integrate media upload capabilities using Vue 3. Specifically, we'll create a custom media frame that allows users to select or upload images effortlessly.
 
 
-Enqueue the Media
+### Enqueue the Media
 In the PHP file of your plugin where you enqueue scripts, ensure to include the following lines to enable WordPress media functionality:
 
 
