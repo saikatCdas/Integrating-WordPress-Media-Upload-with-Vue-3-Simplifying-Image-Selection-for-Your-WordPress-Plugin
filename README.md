@@ -11,9 +11,10 @@ if (function_exists('wp_enqueue_media')) {
 }
 ```
 
-Setup Vue Component 
+### Setup Vue Component 
 Let's dive into creating a Vue.js component named MediaSelector.vue that will handle the media selection functionality
 
+```
 <template>
    <button @click="openMediaFrame">{{ title }}</button>
 </template>
@@ -49,13 +50,13 @@ const openMediaFrame = () => {
    mediaFrame.open();
 };
 </script>
+```
 
 
-
-
-Initialize Media Frame
+### Initialize Media Frame
 In the onMounted hook, we'll initialize the media frame and set up listeners for media selection.
 
+```
 <script setup>
 // Existing code...
 
@@ -80,13 +81,15 @@ onMounted(() => {
    listenForMediaChange();
 });
 </script>
+```
 
 
 
 
-Listen for Media Selection
+### Listen for Media Selection
 We'll listen to the media selection event and emit the selected attachments to the parent component.
 
+```
 const listenForMediaChange = () => {
    mediaFrame.on('select', function () {
        const attachments = mediaFrame.state()
@@ -94,13 +97,15 @@ const listenForMediaChange = () => {
        emit('onMediaSelected', attachments)
    })
 }
+```
 
 Note: If you select a single item or multiple items, the attachments array will contain the chosen item's information. Like url, id, filesize author, etc.
 
 
-Usage
+### Usage
 Now, let's utilize this component in your Vue application:
 
+```
 <template>
    <div>
        <MediaSelector
@@ -140,11 +145,13 @@ const handleMediaSelected = (selectedMedia) => {
 };
 </script>
 
+```
 
 
-Additional Customizations
+### Additional Customizations
 If you want to handle pre-selected media, you can utilize the provided functions setUpPreSelectedIds and setPreselected. Additionally, you can customize the media modal by overriding its default class.
 
+```
 <script setup>
 // Existing code…
 
@@ -200,10 +207,10 @@ wp.media.view.Modal = wp.media.view.Modal.extend({
    className: 'your-custom-class',
 });
 </script>
+```
 
 
-
-Conclusion
+### Conclusion
 In this guide, I tried to demonstrate how to seamlessly integrate WordPress media upload functionality with Vue 3. By creating a custom media selector component, users can effortlessly select or upload images, enhancing the usability of your WordPress plugin. With these steps, you'll be well on your way to creating a more engaging and user-friendly WordPress experience. Happy coding!
 
 Feel free to adjust and expand upon this guide to suit your specific requirements and audience preferences.
